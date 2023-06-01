@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/screenEnter"
+        android:name="uz.gita.exam6medical.presentation.ui.onboarding.OnBoarding"
+        android:label="ScreenEnter"
+        tools:layout="@layout/screen_enter_view">
+        <action
+            android:id="@+id/action_screenEnter_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/hostFragment"
+        android:name="uz.gita.exam6medical.presentation.ui.HostFragment"
+        android:label="HostFragment"
+        tools:layout="@layout/host_screen" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="uz.gita.exam6medical.presentation.ui.splash.SplashFragment"
+        android:label="SplashFragment"
+        tools:layout="@layout/splash_screen">
+        <action
+            android:id="@+id/action_splashFragment_to_screenEnter"
+            app:destination="@id/screenEnter"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_hostFragment"
+            app:destination="@id/hostFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.login.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/sign_in_screen">
+        <action
+            android:id="@+id/action_loginScreen_to_signUpScreen"
+            app:destination="@id/signUpScreen" />
+        <action
+            android:id="@+id/action_loginScreen_to_hostFragment"
+            app:destination="@id/hostFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.signup.SignUpScreen"
+        android:label="SignUpScreen"
+        tools:layout="@layout/sign_up_screen">
+        <action
+            android:id="@+id/action_signUpScreen_to_fillProfileScreen"
+            app:destination="@id/fillProfileScreen"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/fillProfileScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.fillprofile.FillProfileScreen"
+        android:label="FillProfileScreen"
+        tools:layout="@layout/fill_your_profile">
+        <action
+            android:id="@+id/action_fillProfileScreen_to_hostFragment"
+            app:destination="@id/hostFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/screenAllDoctors"
+        android:name="uz.gita.exam6medical.presentation.ui.doctors.ScreenAllDoctors"
+        android:label="ScreenAllDoctors"
+        tools:layout="@layout/screen_doctors">
+        <argument
+            android:name="specialty"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_screenAllDoctors_to_doctorInfoScreen"
+            app:destination="@id/doctorInfoScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.home.HomeScreen"
+        android:label="HomeScreen"
+        tools:layout="@layout/screen_home" />
+    <fragment
+        android:id="@+id/doctorInfoScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.doctorinfo.DoctorInfoScreen"
+        android:label="DoctorInfoScreen"
+        tools:layout="@layout/screen_doctor_info" >
+        <argument
+            android:name="data"
+            app:argType="uz.gita.exam6medical.data.model.common.DoctorData" />
+    </fragment>
+    <fragment
+        android:id="@+id/appointmentScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.appointment.AppointmentScreen"
+        android:label="AppointmentScreen"
+        tools:layout="@layout/screen_appointment" />
+    <fragment
+        android:id="@+id/articleScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.article.ArticleScreen"
+        android:label="ArticleScreen"
+        tools:layout="@layout/screen_articles" />
+    <fragment
+        android:id="@+id/historyScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.history.HistoryScreen"
+        android:label="HistoryScreen"
+        tools:layout="@layout/screen_history" />
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="uz.gita.exam6medical.presentation.ui.profile.ProfileScreen"
+        android:label="ProfileScreen"
+        tools:layout="@layout/profile_screen" />
+</navigation>

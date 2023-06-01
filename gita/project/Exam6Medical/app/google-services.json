@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1086301268923",
+    "project_id": "exam6medical",
+    "storage_bucket": "exam6medical.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1086301268923:android:507758ae5c6389bb5a329e",
+        "android_client_info": {
+          "package_name": "uz.gita.exam6medical"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4R72AiSHnx5QskpVlwKud3iYpempAz40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

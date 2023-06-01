@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginHorizontal="10dp"
+    style="@style/clickEffect"
+    android:layout_marginVertical="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="15dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/doctor_demo" />
+        </androidx.cardview.widget.CardView>
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            app:layout_constraintLeft_toRightOf="@id/imageView" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/line"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Dr. Randy Wigham" />
+
+        <ImageButton
+            android:id="@+id/btn_like"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="?android:selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"
+            android:src="@drawable/like_empty"
+            app:layout_constraintBottom_toBottomOf="@+id/name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/name"
+            app:layout_constraintTop_toTopOf="@+id/name"
+            app:tint="@color/blue" />
+
+        <View
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimaryLight"
+            app:layout_constraintBottom_toTopOf="@id/specialty"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/space"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/specialty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#353535"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/star"
+            app:layout_constraintLeft_toRightOf="@id/space"
+            app:layout_constraintTop_toBottomOf="@id/line"
+            tools:text="Cardiologists" />
+
+        <View
+            android:id="@+id/ver_line"
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:layout_marginHorizontal="8dp"
+            android:background="#353535"
+            app:layout_constraintBottom_toBottomOf="@id/specialty"
+            app:layout_constraintLeft_toRightOf="@id/specialty"
+            app:layout_constraintRight_toLeftOf="@id/work_address"
+            app:layout_constraintTop_toTopOf="@id/specialty" />
+
+        <TextView
+            android:id="@+id/work_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="#353535"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/specialty"
+            app:layout_constraintLeft_toRightOf="@id/ver_line"
+            app:layout_constraintTop_toTopOf="@id/specialty"
+            tools:text="The Valley Hospital" />
+
+        <ImageView
+            android:id="@+id/star"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/star"
+            app:tint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/space"
+            app:layout_constraintTop_toBottomOf="@id/specialty" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="8dp"
+            android:textColor="#353535"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/star"
+            app:layout_constraintLeft_toRightOf="@id/star"
+            app:layout_constraintTop_toTopOf="@id/star"
+            tools:text="4.8" />
+
+        <TextView
+            android:id="@+id/review_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#353535"
+
+            app:layout_constraintBottom_toBottomOf="@id/rating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rating"
+            app:layout_constraintTop_toTopOf="@id/rating"
+            tools:text="(4267 reviews)" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
